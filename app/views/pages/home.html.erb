@@ -1,0 +1,13 @@
+
+<div class="jumbotron">
+<h1>Bienvenido a QueDeboComer</h1>
+<p>Con QueDeboComer facilemnte puedes mantener registro de lo que debes de estar comiendo y lo que estas comiendo</p>
+	<% if user_signed_in? %>
+		#do something
+	<% else %>
+		<p>
+			<%= link_to "Registrate", new_user_registration_path, class: "btn btn-primary"=%> 
+			<%= link_to "Login", new_user_session_path, class: "btn btn-primary"=%> 
+	  	</p>
+	<% end %>
+</div>
