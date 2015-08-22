@@ -1,0 +1,116 @@
+</br>
+<h3> Breakfast </h3></br>
+<div id="dishes" class="transitions-enabled">  
+  <% @dishes.each do |dish| %>
+  <% if (dish.user == current_user && dish.meal == 'Breakfast') %>
+    <div class="box panel panel-default">
+      <%= link_to image_tag(dish.image.url(:medium)), dish %>
+      <div class="panel-body">
+        <h4><%= dish.name %></h4>
+        <%= dish.description %></br>
+        <i><%= dish.meal %></i>
+        <b><%= dish.user.email %></b>
+          <% if dish.user == current_user %>
+            <div class="actions">
+              <%= link_to 'Edit', edit_dish_path(dish) %>
+              <%= link_to 'Destroy', dish, method: :delete, data: { confirm: 'Are you sure?' } %>
+            </div>
+          <% end %>
+      </div>
+    </div>
+    <% end %>
+  <% end %>
+</div>
+</br>
+<h3> Morning Snack </h3></br>
+<div id="dishes" class="transitions-enabled">  
+  <% @dishes.each do |dish| %>
+  <% if (dish.user == current_user && dish.meal == 'Morning Snack') %>
+    <div class="box panel panel-default">
+      <%= link_to image_tag(dish.image.url(:medium)), dish %>
+      <div class="panel-body">
+        <h4><%= dish.name %></h4>
+        <%= dish.description %></br>
+        <i><%= dish.meal %></i>
+        <b><%= dish.user.email %></b>
+          <% if dish.user == current_user %>
+            <div class="actions">
+              <%= link_to 'Edit', edit_dish_path(dish) %>
+              <%= link_to 'Destroy', dish, method: :delete, data: { confirm: 'Are you sure?' } %>
+            </div>
+          <% end %>
+      </div>
+    </div>
+    <% end %>
+  <% end %>
+</div>
+</br>
+<h3> Lunch </h3></br>
+<div id="dishes" class="transitions-enabled">  
+  <% @dishes.each do |dish| %>
+  <% if (dish.user == current_user && dish.meal == 'Lunch') %>
+    <div class="box panel panel-default">
+      <%= link_to image_tag(dish.image.url(:medium)), dish %>
+      <div class="panel-body">
+        <h4><%= dish.name %></h4>
+        <%= dish.description %></br>
+        <i><%= dish.meal %></i>
+        <b><%= dish.user.email %></b>
+          <% if dish.user == current_user %>
+            <div class="actions">
+              <%= link_to 'Edit', edit_dish_path(dish) %>
+              <%= link_to 'Destroy', dish, method: :delete, data: { confirm: 'Are you sure?' } %>
+            </div>
+          <% end %>
+      </div>
+    </div>
+    <% end %>
+  <% end %>
+</div>
+</br>
+<h3> Afternoon Snack</h3></br>
+<div id="dishes" class="transitions-enabled">  
+  <% @dishes.each do |dish| %>
+  <% if (dish.user == current_user && dish.meal == 'Afternoon Snack') %>
+    <div class="box panel panel-default">
+      <%= link_to image_tag(dish.image.url(:medium)), dish %>
+      <div class="panel-body">
+        <h4><%= dish.name %></h4>
+        <%= dish.description %></br>
+        <i><%= dish.meal %></i>
+        <b><%= dish.user.email %></b>
+          <% if dish.user == current_user %>
+            <div class="actions">
+              <%= link_to 'Edit', edit_dish_path(dish) %>
+              <%= link_to 'Destroy', dish, method: :delete, data: { confirm: 'Are you sure?' } %>
+            </div>
+          <% end %>
+      </div>
+    </div>
+    <% end %>
+  <% end %>
+</div>
+</br>
+<h3> Dinner </h3></br>
+<div id="dishes" class="transitions-enabled">  
+  <% @dishes.each do |dish| %>
+  <% if (dish.user == current_user && dish.meal == 'Dinner') %>
+    <div class="box panel panel-default">
+      <%= link_to image_tag(dish.image.url(:medium)), dish %>
+      <div class="panel-body">
+        <h4><%= dish.name %></h4>
+        <%= dish.description %></br>
+        <i><%= dish.meal %></i>
+        <b><%= dish.user.email %></b>
+          <% if dish.user == current_user %>
+            <div class="actions">
+              <%= link_to 'Edit', edit_dish_path(dish) %>
+              <%= link_to 'Destroy', dish, method: :delete, data: { confirm: 'Are you sure?' } %>
+            </div>
+          <% end %>
+      </div>
+    </div>
+    <% end %>
+  <% end %>
+</div>
+</br>

@@ -9,6 +9,9 @@ class DishesController < ApplicationController
     @dishes = Dish.all
   end
 
+  def mealtime
+    @dishes = Dish.all
+  end
   # GET /dishes/1
   # GET /dishes/1.json
   def show

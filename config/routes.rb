@@ -1,5 +1,9 @@
 Rails.application.routes.draw do
-  resources :dishes
+  resources :dishes do
+    collection do
+      get 'mealtime'
+    end
+  end
   devise_for :users
   root "pages#home"
   get "about" => "pages#about"

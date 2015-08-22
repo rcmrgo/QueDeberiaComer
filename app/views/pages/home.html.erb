@@ -4,9 +4,13 @@
 <p>Con QueDeboComer facilemnte puedes mantener registro de lo que debes de estar comiendo y lo que estas comiendo</p>
 	<% if user_signed_in? %>
 		<h3>Agregar un platillo nuevo</h3>
-		<p><%= link_to "Agregar platillo", new_dish_path, class: "btn btn-primary"=%> </p>
-		<h3>Que platillo deberia comer?</h3>
-		<p><%= link_to "comida?", "#", class: "btn btn-primary"=%> </p>
+		<p><%= link_to "Add new dish", new_dish_path, class: "btn btn-primary"=%> </p>
+		<h3>Mis platillos por hora de comida</h3>
+		<p><%= link_to "Dishes by mealtime", mealtime_dishes_path, class: "btn btn-primary"=%> </p>
+		<h3>Que deberia de comer?</h3>
+
+		<p><%= link_to "What should i eat now?", mealtime_dishes_path, class: "btn btn-primary"=%> </p>
+
 	<% else %>
 		<p>
 			<%= link_to "Registrate", new_user_registration_path, class: "btn btn-primary"=%> 
