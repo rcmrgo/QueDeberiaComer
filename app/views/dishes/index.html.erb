@@ -8,6 +8,7 @@
       <th>Name</th>
       <th>Description</th>
       <th>Meal</th>
+      <th>created by</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -18,14 +19,18 @@
         <td><%= dish.name %></td>
         <td><%= dish.description %></td>
         <td><%= dish.meal %></td>
+        <td><%= dish.user.email %></td>
         <td><%= link_to 'Show', dish %></td>
-        <td><%= link_to 'Edit', edit_dish_path(dish) %></td>
-        <td><%= link_to 'Destroy', dish, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <% if dish.user == current_user %>
+          <td><%= link_to 'Edit', edit_dish_path(dish) %></td>
+          <td><%= link_to 'Destroy', dish, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <% end %>
       </tr>
     <% end %>
   </tbody>
 </table>
 
 <br>
-
+<% if user_signed_in? %>
 <%= link_to 'New Dish', new_dish_path %>
+<% end %>

@@ -15,5 +15,7 @@
   <%= @dish.meal %>
 </p>
 
+<% if @dish.user == current_user %>
 <%= link_to 'Edit', edit_dish_path(@dish) %> |
+<% end %>
 <%= link_to 'Back', dishes_path %>

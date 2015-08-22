@@ -1,5 +1,7 @@
 class DishesController < ApplicationController
   before_action :set_dish, only: [:show, :edit, :update, :destroy]
+  before_action :correct_user, only: [:edit, :update, :destroy ]
+  before_action :authenticate_user! , except: [:index, :show]
 
   # GET /dishes
   # GET /dishes.json
@@ -14,7 +16,7 @@ class DishesController < ApplicationController
 
   # GET /dishes/new
   def new
-    @dish = Dish.new
+    @dish = current_user.dish.build
   end
 
   # GET /dishes/1/edit
@@ -24,7 +26,7 @@ class DishesController < ApplicationController
   # POST /dishes
   # POST /dishes.json
   def create
-    @dish = Dish.new(dish_params)
+    @dish = current_user.dish.build(dish_params)
 
     respond_to do |format|
       if @dish.save
@@ -65,6 +67,11 @@ class DishesController < ApplicationController
     # Use callbacks to share common setup or constraints between actions.
     def set_dish
       @dish = Dish.find(params[:id])
+    end
+
+    def correct_user
+      @dish = current_user.dish.find_by(id: params[:id]) 
+      redirect_to dish_path if @dish.nil?
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
