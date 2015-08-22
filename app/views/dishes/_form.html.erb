@@ -1,4 +1,4 @@
-<%= form_for(@dish) do |f| %>
+<%= form_for @dish, html: {multipart: true} do |f| %>
   <% if @dish.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@dish.errors.count, "error") %> prohibited this dish from being saved:</h2>
@@ -19,9 +19,16 @@
     <%= f.label :description %><br>
     <%= f.text_area :description %>
   </div>
-  <div class="field">
-    <%= f.label :meal %><br>
-    <%= f.text_field :meal %>
+   <div class="field">
+    <%= f.label :image %>
+    <%= f.file_field :image, class: "form-control" %>
+  </div>
+  <div class= "field">
+    <%= f.radio_button :meal, 'Breakfast' %> Breakfast<br />
+    <%= f.radio_button :meal, 'Morning Snack' %> Morning Snack<br />
+    <%= f.radio_button :meal, 'Lunch' %> Lunch<br />
+    <%= f.radio_button :meal, 'Afternoon Snack' %> Afternoon Snack<br />
+    <%= f.radio_button :meal, 'Dinner' %> Dinner<br />
   </div>
   <div class="actions">
     <%= f.submit %>
